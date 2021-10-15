@@ -145,3 +145,32 @@ print(original, vectorToAdd, separator: "\n")
 original += vectorToAdd
 // original теперь имеет значения (4.0, 6.0)
 print(original)
+
+
+//MARK: Операторы эквивалентности
+print("\n//Операторы эквивалентности")
+
+extension Vector2D: Equatable {
+    static func == (left: Vector2D, right: Vector2D) -> Bool {
+        return (left.x == right.x) && (left.y == right.y)
+    }
+}
+
+let twoThree = Vector2D(x: 2.0, y: 3.0)
+let anotherTwoThree = Vector2D(x: 2.0, y: 3.0)
+if twoThree == anotherTwoThree {
+    print("Эти два вектора эквиваленты.")
+}
+// Выведет "Эти два вектора эквиваленты."
+
+struct Vector3D: Equatable {
+    var x = 0.0, y = 0.0, z = 0.0
+}
+ 
+let twoThreeFour = Vector3D(x: 2.0, y: 3.0, z: 4.0)
+let anotherTwoThreeFour = Vector3D(x: 2.0, y: 3.0, z: 4.0)
+if twoThreeFour == anotherTwoThreeFour {
+    print("Эти два вектора так же эквиваленты.")
+}
+// Выведет "Эти два вектора так же эквиваленты."
+
