@@ -174,3 +174,21 @@ if twoThreeFour == anotherTwoThreeFour {
 }
 // Выведет "Эти два вектора так же эквиваленты."
 
+
+//MARK: Пользовательские операторы
+print("\n//Пользовательские операторы")
+
+prefix operator +++
+
+extension Vector2D {
+    static prefix func +++ (vector: inout Vector2D) -> Vector2D {
+        vector += vector
+        return vector
+    }
+}
+ 
+var toBeDoubled = Vector2D(x: 1.0, y: 4.0)
+let afterDoubling = +++toBeDoubled
+// toBeDoubled имеет значения (2.0, 8.0)
+// afterDoubling так же имеет значения (2.0, 8.0)
+print(toBeDoubled, afterDoubling, separator: "\n")
