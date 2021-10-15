@@ -110,6 +110,21 @@ let vector = Vector2D(x: 3.0, y: 1.0)
 let anotherVector = Vector2D(x: 2.0, y: 4.0)
 let combinedVector = vector + anotherVector
 // combinedVector является экземпляром Vector2D, который имеет значения (5.0, 5.0)
-
 print(vector, anotherVector, combinedVector, separator: "\n")
 
+
+//MARK: Префиксные и постфиксные операторы
+print("\n//Префиксные и постфиксные операторы")
+
+extension Vector2D {
+    static prefix func - (vector: Vector2D) -> Vector2D {
+        return Vector2D(x: -vector.x, y: -vector.y)
+    }
+}
+
+let positive = Vector2D(x: 3.0, y: 4.0)
+let negative = -positive
+// negative - экземпляр Vector2D со значениями (-3.0, -4.0)
+let alsoPositive = -negative
+// alsoPositive - экземпляр Vector2D со значениями (3.0, 4.0)
+print(positive, negative, alsoPositive, separator: "\n")
