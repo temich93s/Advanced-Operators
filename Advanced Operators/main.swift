@@ -192,3 +192,19 @@ let afterDoubling = +++toBeDoubled
 // toBeDoubled имеет значения (2.0, 8.0)
 // afterDoubling так же имеет значения (2.0, 8.0)
 print(toBeDoubled, afterDoubling, separator: "\n")
+
+
+//MARK: Приоритет для пользовательских инфиксных операторов
+print("\n//Приоритет для пользовательских инфиксных операторов")
+
+infix operator +-: AdditionPrecedence
+extension Vector2D {
+    static func +- (left: Vector2D, right: Vector2D) -> Vector2D {
+        return Vector2D(x: left.x + right.x, y: left.y - right.y)
+    }
+}
+let firstVector = Vector2D(x: 1.0, y: 2.0)
+let secondVector = Vector2D(x: 3.0, y: 4.0)
+let plusMinusVector = firstVector +- secondVector
+// plusMinusVector является экземпляром Vector2D со значениями (4.0, -2.0)
+print(firstVector, secondVector, plusMinusVector, separator: "\n")
