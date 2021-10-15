@@ -81,3 +81,13 @@ var signedUnderflow = Int8.min
 signedUnderflow = signedUnderflow &- 1
 // signedUnderflow теперь равняется 127
 print(signedUnderflow)
+
+
+//MARK: Приоритет и ассоциативность
+print("\n//Приоритет и ассоциативность")
+
+print(2 + 3 % 4 * 5)
+// это равно 17
+
+print(2 + ((3 % 4) * 5))
+// это равно 17
