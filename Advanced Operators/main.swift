@@ -128,3 +128,20 @@ let negative = -positive
 let alsoPositive = -negative
 // alsoPositive - экземпляр Vector2D со значениями (3.0, 4.0)
 print(positive, negative, alsoPositive, separator: "\n")
+
+
+//MARK: Составные операторы присваивания
+print("\n//Составные операторы присваивания")
+
+extension Vector2D {
+    static func += (left: inout Vector2D, right: Vector2D) {
+        left = left + right
+    }
+}
+
+var original = Vector2D(x: 1.0, y: 2.0)
+var vectorToAdd = Vector2D(x: 3.0, y: 4.0)
+print(original, vectorToAdd, separator: "\n")
+original += vectorToAdd
+// original теперь имеет значения (4.0, 6.0)
+print(original)
