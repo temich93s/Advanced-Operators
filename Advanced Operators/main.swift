@@ -9,3 +9,11 @@ import Foundation
 
 print("Hello, World!")
 
+
+//MARK: Побитовый оператор NOT
+print("\n//Побитовый оператор NOT")
+
+let initialBits: UInt8 = 0b00001111
+let invertedBits = ~initialBits  // равен 11110000
+print(initialBits, invertedBits)
+
