@@ -25,3 +25,14 @@ let firstSixBits: UInt8 = 0b11111100
 let lastSixBits: UInt8  = 0b00111111
 let middleFourBits = firstSixBits & lastSixBits  // равен 00111100
 print(firstSixBits, lastSixBits, middleFourBits)
+
+
+//MARK: Побитовый оператор OR
+print("\n//Побитовый оператор OR")
+
+let someBits: UInt8 = 0b10110010
+let moreBits: UInt8 = 0b01011110
+let combinedbits = someBits | moreBits  // равен 11111110
+print(someBits,moreBits, combinedbits)
+
+
