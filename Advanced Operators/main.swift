@@ -59,3 +59,25 @@ let redComponent = (pink & 0xFF0000) >> 16 // redComponent равен 0xCC, ил
 let greenComponent = (pink & 0x00FF00) >> 8 // greenComponent равен 0x66, или 102
 let blueComponent = pink & 0x0000FF // blueComponent равен 0x99, или 153
 print(pink, redComponent, greenComponent, blueComponent)
+
+
+//MARK: Переполнение значения
+print("\n//Переполнение значения")
+
+var willOverflow = UInt8.max
+// willOverflow равняется 255, что является наибольшим числом, которое может держать UInt
+willOverflow = willOverflow &+ 1
+// willOverflow теперь равно 0
+print(willOverflow)
+
+var unsignedOverflow = UInt8.min
+// unsignedOverflow равен 0, что является наименьшим возможным значением UInt8
+unsignedOverflow = unsignedOverflow &- 1
+// unsignedOverflow теперь равно 255
+print(unsignedOverflow)
+
+var signedUnderflow = Int8.min
+// signedUnderflow равняется -128, что является самым маленьким числом, которое может держать Int8
+signedUnderflow = signedUnderflow &- 1
+// signedUnderflow теперь равняется 127
+print(signedUnderflow)
