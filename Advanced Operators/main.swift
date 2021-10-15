@@ -36,3 +36,26 @@ let combinedbits = someBits | moreBits  // равен 11111110
 print(someBits,moreBits, combinedbits)
 
 
+//MARK: Побитовый оператор XOR
+print("\n//Побитовый оператор XOR")
+
+let firstBits: UInt8 = 0b00010100
+let otherBits: UInt8 = 0b00000101
+let outputBits = firstBits ^ otherBits  // равен 00010001
+
+
+//MARK: Поведение сдвига для беззнаковых целых чисел
+print("\n//Поведение сдвига для беззнаковых целых чисел")
+
+let shiftBits: UInt8 = 4   // 00000100 бинарный вид
+print(shiftBits << 1)       // 00001000
+print(shiftBits << 2)       // 00010000
+print(shiftBits << 5)       // 10000000
+print(shiftBits << 6)       // 00000000
+print(shiftBits >> 2)       // 00000001
+
+let pink: UInt32 = 0xCC6699
+let redComponent = (pink & 0xFF0000) >> 16 // redComponent равен 0xCC, или 204
+let greenComponent = (pink & 0x00FF00) >> 8 // greenComponent равен 0x66, или 102
+let blueComponent = pink & 0x0000FF // blueComponent равен 0x99, или 153
+print(pink, redComponent, greenComponent, blueComponent)
